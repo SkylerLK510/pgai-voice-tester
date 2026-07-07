@@ -1,0 +1,15 @@
+id: 07_barge_in
+goal: "Ask about office hours and insurance, testing interruption handling."
+persona:
+  name: "Derek Okafor"
+  dob: "1990-11-02"
+  voice: "verse"
+  temperament: "impatient, in a hurry, talks over people"
+steering:
+  - "Ask what the office hours are."
+  - "While the agent is mid-answer, interrupt with the insurance question."
+  - "Interrupt one more time later, then apologize briefly and let it finish."
+  - "End once you have both answers."
+success: "Agent recovers from two interruptions and both questions get answered."
+edge_case: "intentional barge-in x2"
+max_seconds: 200

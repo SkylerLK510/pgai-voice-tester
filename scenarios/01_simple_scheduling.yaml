@@ -1,0 +1,16 @@
+id: 01_simple_scheduling
+goal: "Book a new-patient appointment for next week, weekday afternoon."
+persona:
+  name: "Margaret Chen"
+  dob: "1958-03-14"
+  voice: "alloy"
+  temperament: "polite, a little chatty, occasionally asks the agent to repeat"
+steering:
+  - "Open naturally: you'd like to make an appointment; don't dump all info at once."
+  - "Only give DOB/details when asked."
+  - "If offered a morning slot, ask for an afternoon one."
+  - "Accept the second concrete time offered."
+  - "Repeat the final date and time back in your own words before saying goodbye."
+success: "Confirmed weekday afternoon appointment, details restated."
+edge_case: null
+max_seconds: 240
