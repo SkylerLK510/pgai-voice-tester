@@ -21,6 +21,18 @@
 
 None.
 
+## Review Fixes
+
+- Switched the Realtime session update to the GA shape for `gpt-realtime-2.1`: `session.type`, `output_modalities`, nested `audio.input` / `audio.output`, and `audio/pcmu` G.711 mu-law formats.
+- Removed the unconditional first `response.create`; server VAD now answers after the callee greeting, with a 5-second silent-callee fallback.
+- Fixed the reproduced goodbye stall by retrying one canceled/no-audio goodbye response, then finishing and hanging up regardless.
+- The bridge now attempts REST hangup in `finally` whenever a `call_sid` exists and the call has not already been hung up.
+- `run_call` now reports outer `asyncio.TimeoutError` cleanly instead of surfacing a traceback.
+
+## Blocked Verification
+
+- Direct Realtime API smoke test was not run because this workspace has no `.env` and no `OPENAI_API_KEY` in the shell environment.
+
 ## Notes
 
 - I did not place a live call.

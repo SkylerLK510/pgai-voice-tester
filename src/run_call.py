@@ -38,7 +38,7 @@ def main() -> None:
         raise SystemExit("Usage: python -m src.run_call scenarios/<file>.yaml")
     try:
         asyncio.run(run(Path(sys.argv[1])))
-    except (FileNotFoundError, RuntimeError, ValueError) as exc:
+    except (asyncio.TimeoutError, FileNotFoundError, RuntimeError, ValueError) as exc:
         raise SystemExit(str(exc)) from exc
 
 

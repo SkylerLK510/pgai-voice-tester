@@ -15,10 +15,12 @@ from twilio.rest import Client
 from .scenario import Scenario, build_patient_prompt
 
 
-OPENAI_REALTIME_MODEL = "gpt-realtime"
+OPENAI_REALTIME_MODEL = "gpt-realtime-2.1"
 OPENAI_REALTIME_URL = "wss://api.openai.com/v1/realtime"
-OPENAI_AUDIO_FORMAT = "g711_ulaw"
+OPENAI_AUDIO_FORMAT = "audio/pcmu"
+INITIAL_GREETING_WAIT_SECONDS = 5.0
 GOODBYE_FLUSH_SECONDS = 8.0
+MAX_GOODBYE_ATTEMPTS = 2
 
 
 @dataclass
@@ -38,12 +40,15 @@ class BridgeState:
     started_at: float = field(default_factory=time.monotonic)
     stream_sid: str | None = None
     call_sid: str | None = None
+    agent_speech_started: bool = False
+    initial_response_sent: bool = False
     response_in_progress: bool = False
     bot_audio_sent: bool = False
     pending_marks: set[str] = field(default_factory=set)
     mark_counter: int = 0
     closing: bool = False
     goodbye_requested: bool = False
+    goodbye_attempts: int = 0
     hangup_started: bool = False
     hung_up: bool = False
     close_reason: str = ""
@@ -79,6 +84,7 @@ async def bridge_media_stream(twilio_ws: WebSocket, config: BridgeConfig) -> Non
             tasks = [
                 asyncio.create_task(_from_twilio(twilio_ws, openai_ws, state)),
                 asyncio.create_task(_from_openai(openai_ws, twilio_ws, config, state)),
+                asyncio.create_task(_initial_silence_fallback(openai_ws, config, state)),
                 asyncio.create_task(_max_duration_timer(openai_ws, twilio_ws, config, state)),
             ]
             done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
@@ -92,9 +98,7 @@ async def bridge_media_stream(twilio_ws: WebSocket, config: BridgeConfig) -> Non
     except websockets.ConnectionClosed:
         print("OpenAI Realtime connection closed.")
     finally:
-        if state.call_sid and state.hangup_started and not state.hung_up:
-            await _hang_up_call(config.twilio_client, state.call_sid)
-            state.hung_up = True
+        await _hang_up_if_needed(config, state)
         config.done.set()
 
 
@@ -128,21 +132,28 @@ async def _configure_openai_session(openai_ws: Any, scenario: Scenario) -> None:
         {
             "type": "session.update",
             "session": {
-                "turn_detection": {
-                    "type": "server_vad",
-                    "threshold": 0.5,
-                    "prefix_padding_ms": 300,
-                    "silence_duration_ms": 500,
-                    "create_response": True,
-                    "interrupt_response": True,
-                },
-                "input_audio_format": OPENAI_AUDIO_FORMAT,
-                "output_audio_format": OPENAI_AUDIO_FORMAT,
-                "input_audio_transcription": {"model": "whisper-1"},
-                "voice": scenario.persona.voice,
+                "type": "realtime",
+                "model": OPENAI_REALTIME_MODEL,
                 "instructions": build_patient_prompt(scenario),
-                "modalities": ["audio", "text"],
-                "temperature": 0.8,
+                "output_modalities": ["audio"],
+                "audio": {
+                    "input": {
+                        "format": {"type": OPENAI_AUDIO_FORMAT},
+                        "transcription": {"model": "whisper-1"},
+                        "turn_detection": {
+                            "type": "server_vad",
+                            "threshold": 0.5,
+                            "prefix_padding_ms": 300,
+                            "silence_duration_ms": 500,
+                            "create_response": True,
+                            "interrupt_response": True,
+                        },
+                    },
+                    "output": {
+                        "format": {"type": OPENAI_AUDIO_FORMAT},
+                        "voice": scenario.persona.voice,
+                    },
+                },
                 "tools": [
                     {
                         "type": "function",
@@ -164,7 +175,6 @@ async def _configure_openai_session(openai_ws: Any, scenario: Scenario) -> None:
             },
         },
     )
-    await _send_openai(openai_ws, {"type": "response.create"})
 
 
 async def _from_twilio(twilio_ws: WebSocket, openai_ws: Any, state: BridgeState) -> None:
@@ -214,8 +224,7 @@ async def _from_openai(
         elif event_type in {"response.audio.done", "response.output_audio.done"}:
             state.response_in_progress = False
             await _send_twilio_mark(twilio_ws, state)
-            if _can_finish_closing_response(state):
-                await _finish_after_audio_flush(config, state)
+            if await _handle_closing_response_done(openai_ws, twilio_ws, config, state):
                 return
         elif event_type in {
             "response.audio_transcript.delta",
@@ -234,6 +243,7 @@ async def _from_openai(
         elif event_type == "conversation.item.input_audio_transcription.completed":
             _log_utterance(state, "AGENT", event.get("transcript", ""))
         elif event_type == "input_audio_buffer.speech_started":
+            state.agent_speech_started = True
             await _handle_barge_in(openai_ws, twilio_ws, state)
         elif event_type == "response.function_call_arguments.done":
             if event.get("name") == "end_call":
@@ -248,12 +258,30 @@ async def _from_openai(
                     return
         elif event_type == "response.done":
             state.response_in_progress = False
-            if _can_finish_closing_response(state):
-                await _finish_after_audio_flush(config, state)
+            if await _handle_closing_response_done(openai_ws, twilio_ws, config, state):
                 return
         elif event_type == "error":
             error = event.get("error", {})
             print(f"OpenAI error: {error.get('message') or error}")
+
+
+async def _initial_silence_fallback(openai_ws: Any, config: BridgeConfig, state: BridgeState) -> None:
+    while not state.stream_sid and not config.done.is_set():
+        await asyncio.sleep(0.05)
+    await asyncio.sleep(INITIAL_GREETING_WAIT_SECONDS)
+    if (
+        not state.agent_speech_started
+        and not state.initial_response_sent
+        and not state.response_in_progress
+        and not state.closing
+        and not config.done.is_set()
+    ):
+        state.initial_response_sent = True
+        await _create_patient_response(
+            openai_ws,
+            "The other side has not greeted you yet. Start the call naturally and briefly.",
+        )
+    await config.done.wait()
 
 
 async def _max_duration_timer(
@@ -302,6 +330,7 @@ async def _say_goodbye_then_hangup(
 ) -> None:
     state.closing = True
     state.goodbye_requested = True
+    state.goodbye_attempts += 1
     state.close_reason = reason
     if state.response_in_progress:
         await _send_openai(openai_ws, {"type": "response.cancel"})
@@ -310,32 +339,53 @@ async def _say_goodbye_then_hangup(
             state.pending_marks.clear()
     state.response_in_progress = True
     state.bot_audio_sent = False
+    state.initial_response_sent = True
+    await _create_patient_response(
+        openai_ws,
+        "Say a brief, warm goodbye as the patient and do not ask another question.",
+    )
+
+
+async def _create_patient_response(openai_ws: Any, instructions: str) -> None:
     await _send_openai(
         openai_ws,
         {
             "type": "response.create",
             "response": {
-                "modalities": ["audio", "text"],
-                "instructions": "Say a brief, warm goodbye as the patient and do not ask another question.",
+                "output_modalities": ["audio"],
+                "instructions": instructions,
             },
         },
     )
 
 
-def _can_finish_closing_response(state: BridgeState) -> bool:
+async def _handle_closing_response_done(
+    openai_ws: Any,
+    twilio_ws: WebSocket,
+    config: BridgeConfig,
+    state: BridgeState,
+) -> bool:
     if not state.closing:
         return False
     if state.goodbye_requested and not state.bot_audio_sent:
-        return False
+        if state.goodbye_attempts < MAX_GOODBYE_ATTEMPTS:
+            await _say_goodbye_then_hangup(
+                openai_ws,
+                twilio_ws,
+                state,
+                state.close_reason or "closing",
+            )
+            return False
+        await _finish_after_audio_flush(config, state)
+        return True
+    await _finish_after_audio_flush(config, state)
     return True
 
 
 async def _finish_after_audio_flush(config: BridgeConfig, state: BridgeState) -> None:
     await _wait_for_marks(state)
     state.hangup_started = True
-    if state.call_sid and not state.hung_up:
-        await _hang_up_call(config.twilio_client, state.call_sid)
-        state.hung_up = True
+    await _hang_up_if_needed(config, state)
     config.done.set()
 
 
@@ -348,6 +398,16 @@ async def _wait_for_marks(state: BridgeState) -> None:
 async def _hang_up_call(twilio_client: Client, call_sid: str) -> None:
     await asyncio.to_thread(twilio_client.calls(call_sid).update, status="completed")
     print(f"Call ended: call_sid={call_sid}")
+
+
+async def _hang_up_if_needed(config: BridgeConfig, state: BridgeState) -> None:
+    if not state.call_sid or state.hung_up:
+        return
+    try:
+        await _hang_up_call(config.twilio_client, state.call_sid)
+        state.hung_up = True
+    except Exception as exc:
+        print(f"Failed to hang up call_sid={state.call_sid}: {exc}")
 
 
 async def _send_twilio_media(twilio_ws: WebSocket, state: BridgeState, payload: str | None) -> None:
