@@ -15,7 +15,7 @@ from twilio.rest import Client
 from .scenario import Scenario, build_patient_prompt
 
 
-OPENAI_REALTIME_MODEL = "gpt-realtime-2.1"
+OPENAI_REALTIME_MODEL = "gpt-realtime"
 OPENAI_REALTIME_URL = "wss://api.openai.com/v1/realtime"
 OPENAI_AUDIO_FORMAT = "audio/pcmu"
 INITIAL_GREETING_WAIT_SECONDS = 5.0
