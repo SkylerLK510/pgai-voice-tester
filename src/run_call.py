@@ -89,8 +89,6 @@ async def run(scenario_path: Path) -> None:
         )
         print(f"Outbound call placed: call_sid={call_sid} target={TARGET_NUMBER}")
         await asyncio.wait_for(done.wait(), timeout=scenario.max_seconds + 120)
-        transcript_path = write_transcript(transcript, output_paths.transcript_path)
-        print(f"Transcript written: {transcript_path}")
         recording_path = await download_call_recording(
             twilio_client,
             settings.twilio_account_sid,
@@ -100,6 +98,11 @@ async def run(scenario_path: Path) -> None:
         )
         print(f"Recording downloaded: {recording_path}")
     finally:
+        # Always keep whatever transcript we captured, even if the call
+        # stalled, timed out, or the operator interrupted the run.
+        if transcript:
+            transcript_path = write_transcript(transcript, output_paths.transcript_path)
+            print(f"Transcript written: {transcript_path}")
         server.should_exit = True
         await server_task
 
