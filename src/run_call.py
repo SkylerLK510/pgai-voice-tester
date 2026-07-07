@@ -14,6 +14,12 @@ from twilio.rest import Client
 from twilio.twiml.voice_response import Connect, Stream, VoiceResponse
 
 from .call_bridge import BridgeConfig, create_app
+from .recording import (
+    TranscriptLine,
+    build_output_paths,
+    download_call_recording,
+    write_transcript,
+)
 from .scenario import load_scenario
 
 
@@ -48,13 +54,16 @@ async def run(scenario_path: Path) -> None:
     scenario = load_scenario(scenario_path)
 
     done = asyncio.Event()
+    transcript: list[TranscriptLine] = []
     twilio_client = Client(settings.twilio_account_sid, settings.twilio_auth_token)
+    output_paths = build_output_paths(scenario.id)
     app = create_app(
         BridgeConfig(
             scenario=scenario,
             openai_api_key=settings.openai_api_key,
             twilio_client=twilio_client,
             done=done,
+            transcript=transcript,
         )
     )
 
@@ -80,7 +89,20 @@ async def run(scenario_path: Path) -> None:
         )
         print(f"Outbound call placed: call_sid={call_sid} target={TARGET_NUMBER}")
         await asyncio.wait_for(done.wait(), timeout=scenario.max_seconds + 120)
+        recording_path = await download_call_recording(
+            twilio_client,
+            settings.twilio_account_sid,
+            settings.twilio_auth_token,
+            call_sid,
+            output_paths.recording_path,
+        )
+        print(f"Recording downloaded: {recording_path}")
     finally:
+        # Always keep whatever transcript we captured, even if the call
+        # stalled, timed out, or the operator interrupted the run.
+        if transcript:
+            transcript_path = write_transcript(transcript, output_paths.transcript_path)
+            print(f"Transcript written: {transcript_path}")
         server.should_exit = True
         await server_task
 
