@@ -12,6 +12,7 @@ import websockets
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from twilio.rest import Client
 
+from .recording import TranscriptLine
 from .scenario import Scenario, build_patient_prompt
 
 
@@ -31,6 +32,7 @@ class BridgeConfig:
     openai_api_key: str
     twilio_client: Client
     done: asyncio.Event
+    transcript: list[TranscriptLine]
 
 
 @dataclass
@@ -239,9 +241,9 @@ async def _from_openai(
         }:
             transcript = event.get("transcript") or "".join(state.patient_transcript).strip()
             state.patient_transcript.clear()
-            _log_utterance(state, "PATIENT", transcript)
+            _log_utterance(config, state, "PATIENT", transcript)
         elif event_type == "conversation.item.input_audio_transcription.completed":
-            _log_utterance(state, "AGENT", event.get("transcript", ""))
+            _log_utterance(config, state, "AGENT", event.get("transcript", ""))
         elif event_type == "input_audio_buffer.speech_started":
             state.agent_speech_started = True
             await _handle_barge_in(openai_ws, twilio_ws, state)
@@ -441,7 +443,15 @@ async def _send_openai(openai_ws: Any, payload: dict[str, Any]) -> None:
     await openai_ws.send(json.dumps(payload))
 
 
-def _log_utterance(state: BridgeState, speaker: str, transcript: str) -> None:
+def _log_utterance(
+    config: BridgeConfig,
+    state: BridgeState,
+    speaker: str,
+    transcript: str,
+) -> None:
     text = " ".join((transcript or "").split())
     if text:
-        print(f"[{state.elapsed()}] {speaker}: {text}")
+        elapsed_seconds = max(0, int(time.monotonic() - state.started_at))
+        line = TranscriptLine(elapsed_seconds=elapsed_seconds, speaker=speaker, text=text)
+        config.transcript.append(line)
+        print(line.format())

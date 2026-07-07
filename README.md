@@ -13,4 +13,8 @@ conversations from scenario files, records + transcribes calls, and flags bugs.
 python -m src.run_call scenarios/01_simple_scheduling.yaml
 ```
 
+After the call hangs up, the runner writes:
+- `calls/recordings/call_<scenario_id>_<YYYYMMDD-HHMMSS>.mp3`
+- `calls/transcripts/call_<scenario_id>_<YYYYMMDD-HHMMSS>.txt`
+
 See `docs/SPEC.md` for architecture, `AGENTS.md` for the coding-agent workflow.
