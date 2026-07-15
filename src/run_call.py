@@ -37,6 +37,16 @@ class Settings:
     port: int
 
 
+@dataclass(frozen=True)
+class CallResult:
+    """Artifacts and timing from one completed call."""
+
+    scenario_id: str
+    duration_seconds: int
+    recording_path: Path
+    transcript_path: Path
+
+
 def main() -> None:
     """CLI entry point."""
 
@@ -48,9 +58,11 @@ def main() -> None:
         raise SystemExit(str(exc)) from exc
 
 
-async def run(scenario_path: Path) -> None:
+async def run(scenario_path: Path, settings: Settings | None = None) -> CallResult:
+    """Run one call and return the artifacts needed by the batch runner."""
+
     load_dotenv()
-    settings = load_settings()
+    settings = settings or load_settings()
     scenario = load_scenario(scenario_path)
 
     done = asyncio.Event()
@@ -79,6 +91,9 @@ async def run(scenario_path: Path) -> None:
     server_task = asyncio.create_task(server.serve())
     await _wait_for_server(server)
 
+    duration_seconds = 0
+    recording_path = output_paths.recording_path
+    transcript_path: Path | None = None
     try:
         call_sid = await asyncio.to_thread(
             create_outbound_call,
@@ -88,7 +103,9 @@ async def run(scenario_path: Path) -> None:
             TARGET_NUMBER,
         )
         print(f"Outbound call placed: call_sid={call_sid} target={TARGET_NUMBER}")
+        call_started_at = asyncio.get_running_loop().time()
         await asyncio.wait_for(done.wait(), timeout=scenario.max_seconds + 120)
+        duration_seconds = round(asyncio.get_running_loop().time() - call_started_at)
         recording_path = await download_call_recording(
             twilio_client,
             settings.twilio_account_sid,
@@ -105,6 +122,18 @@ async def run(scenario_path: Path) -> None:
             print(f"Transcript written: {transcript_path}")
         server.should_exit = True
         await server_task
+
+    if transcript_path is None:
+        raise RuntimeError(
+            f"Call {scenario.id} completed without a transcript; recording is at {recording_path}"
+        )
+
+    return CallResult(
+        scenario_id=scenario.id,
+        duration_seconds=duration_seconds,
+        recording_path=recording_path,
+        transcript_path=transcript_path,
+    )
 
 
 def load_settings() -> Settings:
