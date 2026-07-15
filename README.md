@@ -26,4 +26,21 @@ python -m src.analyze --all
 Analyzer JSON goes to `calls/analysis/`, and unreviewed markdown entries are appended
 to `docs/BUG_REPORT.md`.
 
+## Run a batch
+```sh
+python -m src.run_batch scenarios/
+```
+
+Only run the live batch in an operator-attended session, after at least three clean
+single calls placed in that same sitting. During development, use `--dry-run` only.
+
+Batch calls run sequentially with a 30-second gap, and each completed transcript is
+analyzed before the next call. Use `--gap-seconds N` to increase the gap; values below
+30 are refused. The runner writes a linked summary to `calls/index.md`.
+
+Validate the scenario order and pacing without credentials or phone calls:
+```sh
+python -m src.run_batch scenarios/ --dry-run
+```
+
 See `docs/SPEC.md` for architecture, `AGENTS.md` for the coding-agent workflow.
