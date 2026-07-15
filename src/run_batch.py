@@ -29,7 +29,7 @@ class BatchEntry:
     duration_seconds: int
     recording_path: Path
     transcript_path: Path
-    bug_count: int
+    bug_count: int  # -1 = analysis failed during the batch; backfill via src.analyze
 
 
 def main() -> None:
@@ -92,10 +92,20 @@ async def _analyze_call(
     call_result: CallResult,
     settings: Settings,
 ) -> BatchEntry:
-    result = await analyze_transcript(call_result.transcript_path, settings.openai_api_key)
-    analysis_paths = write_analysis_outputs(result, call_result.transcript_path)
-    print(f"Analysis JSON written: {analysis_paths.json_path}")
-    print(f"Bug report appended: {analysis_paths.report_path}")
+    # Analysis is best-effort: the recording and transcript are already on disk,
+    # so an analyzer failure must never abort the remaining (expensive) calls.
+    bug_count = -1
+    try:
+        result = await analyze_transcript(call_result.transcript_path, settings.openai_api_key)
+        analysis_paths = write_analysis_outputs(result, call_result.transcript_path)
+        print(f"Analysis JSON written: {analysis_paths.json_path}")
+        print(f"Bug report appended: {analysis_paths.report_path}")
+        bug_count = len(result.bugs)
+    except Exception as exc:
+        print(
+            f"WARNING: analysis failed for {call_result.transcript_path} ({exc}); "
+            f"backfill with: python -m src.analyze {call_result.transcript_path}"
+        )
 
     return BatchEntry(
         scenario_path=scenario_path,
@@ -103,7 +113,7 @@ async def _analyze_call(
         duration_seconds=call_result.duration_seconds,
         recording_path=call_result.recording_path,
         transcript_path=call_result.transcript_path,
-        bug_count=len(result.bugs),
+        bug_count=bug_count,
     )
 
 
@@ -122,9 +132,10 @@ def write_call_index(entries: list[BatchEntry], index_path: Path = CALL_INDEX_PA
         scenario_link = _markdown_link(entry.scenario_id, entry.scenario_path, index_path)
         recording_link = _markdown_link("MP3", entry.recording_path, index_path)
         transcript_link = _markdown_link("TXT", entry.transcript_path, index_path)
+        bug_cell = str(entry.bug_count) if entry.bug_count >= 0 else "pending"
         lines.append(
             f"| {scenario_link} | {_format_duration(entry.duration_seconds)} | "
-            f"{recording_link} | {transcript_link} | {entry.bug_count} |"
+            f"{recording_link} | {transcript_link} | {bug_cell} |"
         )
 
     index_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
