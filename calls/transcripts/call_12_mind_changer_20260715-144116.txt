@@ -1,0 +1,26 @@
+[00:05] AGENT: This call may be recorded for quality and training purposes.
+[00:06] AGENT: Para Español, oprima el 2.
+[00:14] AGENT: Thanks for calling pivot point orthopedics part of pretty good AI. How may I help you today?
+[00:14] PATIENT: Hi there! I'd like to schedule an appointment for an annual physical.
+[00:24] AGENT: I see you're calling from the number we have on file.
+[00:24] AGENT: Am I speaking with Margaret?
+[00:25] PATIENT: Oh, no, this is Felicia Grant. I'm calling to set up my appointment.
+[00:32] AGENT: Please provide your date of birth, Felicia.
+[00:32] PATIENT: Sure, it's May 29, 1982.
+[00:47] PATIENT: Yes, that’s correct.
+[00:47] AGENT: Just to confirm, I have your name as Phylicia Grant and your date of birth as May 29, 1982. Is that correct?
+[01:00] AGENT: Would you like to use your phone number to look up your record? If so, please provide the number you have on file with us.
+[01:05] AGENT: If you're not sure, I can confirm your name and date of birth again. Which would you prefer?
+[01:06] PATIENT: I think my name and date of birth should be enough to pull it up, right? Let's go from there.
+[01:21] PATIENT: Sure. It’s Felicia Grant, F-E-L-I-C-I-A, G-R-A-N-T. And my date of birth is May 29, 1982.
+[01:22] AGENT: Let's confirm your details one more time. Please spell out your first and last name and confirm your date of birth.
+[01:32] AGENT: Go ahead and spell your first and last name and confirm your date of birth, please.
+[01:33] PATIENT: I just spelled it out: Felicia Grant, F-E-L-I-C-I-A, G-R-A-N-T, and my birthdate is May 29, 1982.
+[01:56] AGENT: I can't proceed further right now, but I can make sure our clinic support team follows up with you. Would you like me to connect you to our patient support team?
+[01:57] PATIENT: Oh, actually, wait—I really want to get this appointment sorted out now. Could we try again with the details I gave?
+[02:13] AGENT: Thank you for clarifying. To continue, please confirm your full date of birth and month, day, and year format.
+[02:13] PATIENT: Sure, it’s 05-29-1982.
+[02:27] AGENT: I'm still unable to verify your information in the system.
+[02:33] AGENT: I can connect you to our patient support team now so they can help you schedule your appointment. Please stay on the line.
+[02:37] AGENT: connecting you to a representative. Please wait.
+[02:37] PATIENT: Oh, hang on. No need to transfer just yet

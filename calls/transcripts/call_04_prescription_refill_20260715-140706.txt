@@ -1,0 +1,23 @@
+[00:06] AGENT: This call may be recorded for quality and training purposes.
+[00:07] AGENT: Para Español, oprima el 2.
+[00:13] AGENT: Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[00:13] PATIENT: Hi there. I’m out of my blood pressure pills and I need a refill.
+[00:30] PATIENT: No, this is Walter Briggs.
+[00:30] AGENT: I see you're calling from the number we have on file. Am I speaking with Margaret?
+[00:36] AGENT: Could you please provide your full name and date of birth?
+[00:37] PATIENT: Sure, it's Walter Briggs, and my date of birth is January 8, 1949.
+[00:45] AGENT: Thanks, Walter! What is your date of birth?
+[00:46] PATIENT: My date of birth is January 8, 1949.
+[01:07] AGENT: Just to confirm, I have your name as Walter Briggs, and your date of birth?
+[01:15] AGENT: as January 8th, 1949. Is that correct? If so, could you please spell your first and last name for me?
+[01:15] PATIENT: Yes, that’s correct. My first name is W-A-L-T-E-R, and my last name is B-R-I-G-G-S.
+[01:39] PATIENT: Yes, that's right.
+[01:40] AGENT: I have your phone number as 234-231-6327 and your date of birth as January 8th, 1949. Is that correct?
+[01:52] AGENT: I can't proceed further right now, but I can make sure our clinic support team follows up with you. Would you like me to connect you to our patient support team?
+[01:52] PATIENT: I really just need a refill on my medication. Can we sort that out right now?
+[02:12] AGENT: I'm unable to process your refill directly at the moment, but I'll make sure our clinic support team gets your request and follows up as soon as possible. Please hold while I document your request.
+[02:12] PATIENT: All right, but I need to tell you the medication: it's lisinopril, 10 milligrams.
+[02:19] PATIENT: Actually, before we
+[02:19] AGENT: connecting you to a representative. Please wait.
+[02:25] AGENT: Hello. You've reached the Pretty Good AI test line. Goodbye.
+[02:25] PATIENT: Wait, I still need to confirm the pharmacy. It's the CVS on Higuera Street. Could you repeat that back to me?

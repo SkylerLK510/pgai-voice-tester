@@ -1,0 +1,39 @@
+[00:06] AGENT: This call may be recorded for quality and training purposes.
+[00:06] PATIENT: No, thanks. I'll stick with
+[00:07] AGENT: Para Español, oprima el 2.
+[00:13] AGENT: Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[00:14] PATIENT: Hi, yeah, I actually need to cancel my appointment for tomorrow. Sorry about the short notice, but could you let me know if there’s any fee for canceling this late?
+[00:31] PATIENT: Oh, no, this is Priya Nair. I’m the one with the appointment for tomorrow.
+[00:31] AGENT: I see you're calling from the number we have on file. Am I speaking with Margaret?
+[00:48] PATIENT: Sure, it's September 30th, 1985.
+[00:48] AGENT: Please provide your full date of birth.
+[01:01] AGENT: Just to confirm, I have your name as Priya Nair.
+[01:03] AGENT: and your date of birth as September 30th.
+[01:04] AGENT: 1985.
+[01:09] AGENT: Is that correct? If so, could you please spell your first and last name for me?
+[01:10] PATIENT: Yes, that’s correct. My first name is spelled P-R-I-Y-A, and my last name is N-A-I-R.
+[01:21] AGENT: Thank you. Could you please spell your last name as well?
+[01:21] PATIENT: Of course, my last name is N-A-I-R.
+[01:28] PATIENT: Sure, it’s N as in Nancy, A, I, R.
+[01:28] AGENT: Could you please spell your last name, Nair, for me?
+[01:46] AGENT: I have your first name as Rhea, last name as Nair, date of birth...
+[01:48] PATIENT: That's right.
+[01:49] AGENT: as September 30th, 1985.
+[01:56] AGENT: And your phone number is 234-231-6327.
+[01:57] PATIENT: Yes, that’s all correct.
+[01:57] AGENT: Is all of that correct?
+[02:09] AGENT: I can't proceed further right now, but I can make sure our clinic support team follows up with you.
+[02:12] AGENT: Would you like me to connect you to our patient support team?
+[02:13] PATIENT: Actually, I just need to know if there's a fee for canceling this late. Can you tell me that?
+[02:31] AGENT: I don't have access to the clinic's cancellation fee policy. I'll let our CLUIC support team know to follow up with you about possible fees for canceling your appointment.
+[02:34] AGENT: Would you like me to have them call you back as soon as possible?
+[02:35] PATIENT: So is that a yes or a no on the fee? I really need a clear answer before I confirm the cancellation.
+[02:48] AGENT: I understand you need a clear answer.
+[02:53] AGENT: I don't have the ability to confirm if there's a cancellation fee for your appointment.
+[02:58] AGENT: I'll make sure our clinic support team contacts you as soon as possible with the details before making any changes.
+[03:01] AGENT: Would you like me to have them calling you back?
+[03:02] PATIENT: I’d really prefer to cancel now and get a confirmation. I’ll figure out my schedule later. Could you confirm the cancellation for me? And if you’re not sure about the fee, could you point me to who knows for sure?
+[03:24] AGENT: I'm unable to cancel your appointment directly due to a system issue. I'll connect you to our patient support team now.
+[03:27] AGENT: They can confirm your cancellation and answer your question about any fees.
+[03:29] PATIENT: Alright
+[03:29] AGENT: Please stay on the line.

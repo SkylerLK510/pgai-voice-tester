@@ -1,0 +1,44 @@
+[00:05] AGENT: This call may be recorded for quality and training purposes.
+[00:06] AGENT: Para Español, oprima el 2.
+[00:13] PATIENT: Hi there, I need to move my appointment that's set for this Thursday.
+[00:14] AGENT: Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[00:27] AGENT: I see you're calling from the number we have on file. Am I speaking with Margaret?
+[00:27] PATIENT: Oh, actually, no, this is Robert Alvarez.
+[00:40] AGENT: Please provide your full date of birth.
+[00:41] PATIENT: Sure, it's June 22, 1971.
+[00:59] AGENT: Just to confirm, can you please spell your first and last name for me?
+[01:00] PATIENT: Of course. First name: R-O-B-E-R-T, last name: A-L-V-A-R-E-Z.
+[01:10] AGENT: Thank you. Could you please spell your last name as well?
+[01:11] PATIENT: Certainly, it's A-L-V-A-R-E-Z.
+[01:16] AGENT: Go ahead and display your last name, please.
+[01:16] PATIENT: Sure, it's A-L-V-A-R-E-Z.
+[01:22] PATIENT: Apologies, sure. It's A-L-V-A-R-E-Z.
+[01:22] AGENT: Please spell your last name for me.
+[01:29] AGENT: Whenever you're ready, please spell your last name.
+[01:30] PATIENT: A-L-V-A-R-E-Z
+[01:38] AGENT: I did not catch that. Could you please spell your full last name letter by letter?
+[01:39] PATIENT: Certainly, it's A as in apple, L as in Larry, V as in Victor, A as in apple, R as in Robert, E as in Edward, Z as in zebra.
+[01:45] AGENT: Please spell your last name letter by letter.
+[01:46] PATIENT: A-L-V-A-R-E-Z
+[01:51] AGENT: Thank you. Please continue spelling your last name.
+[01:52] PATIENT: No problem, that's A-L-V-A-R-E-Z.
+[02:17] AGENT: Would you like to use your phone number to look up your record? If so, please provide the number you have on file with us. If you're not sure, let me know and we can confirm your name and date of birth again.
+[02:18] PATIENT: I’d prefer to confirm by name and date of birth again. That’s Robert Alvarez, June 22, 1971.
+[02:32] AGENT: Please spell your first and last name and state your date of birth once more.
+[02:34] PATIENT: Okay, first name: R-O-B-E-R-T, last name: A-L-V-A-R-E-Z, and the date of birth is June 22, 1971.
+[02:45] AGENT: Go ahead and spell your first and last name, then share your date of birth.
+[02:47] PATIENT: Sure, first name: R-O-B-E-R-T, last name: A-L-V-A-R-E-Z, and the date of birth is June 22, 1971.
+[02:53] AGENT: Please spell your first name, then your last name, and tell me your date of birth.
+[02:55] PATIENT: First name: R-O-B-E-R-T, last name: A-L-V-A-R-E-Z, date of birth: June 22, 1971.
+[03:02] AGENT: Thank you. Please phone your last name.
+[03:02] PATIENT: A-L-V-A-R-E-Z
+[03:07] PATIENT: Z. That’s the final letter.
+[03:08] AGENT: Please continue spelling your last name.
+[03:21] AGENT: Could you spell out the full last name letter by letter?
+[03:22] PATIENT: Sure, the full last name is A-L-V-A-R-E-Z.
+[03:28] AGENT: Go ahead and spell your last name letter by letter.
+[03:29] PATIENT: A-L-V-A-R-E-Z
+[03:44] AGENT: Please spell your entire last name one letter at a time.
+[03:44] PATIENT: A-L-V-A-R-E-Z
+[03:53] AGENT: Please continue spelling your last name.
+[03:55] PATIENT: I just finished spelling it: A-L-V-A-R-E-Z.

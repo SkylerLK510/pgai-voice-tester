@@ -1,0 +1,40 @@
+[00:05] AGENT: This call may be recorded for quality and training purposes.
+[00:06] PATIENT: I’m here to help
+[00:07] AGENT: Para Español, oprima el 2.
+[00:11] AGENT: Thanks for calling for the point orthopedics part of pretty good AI
+[00:13] AGENT: How may I help you today?
+[00:13] PATIENT: Hi, I'd be happy to help you schedule an appointment. Could you tell me what kind of appointment you're looking for?
+[00:24] AGENT: I see your call in from the number we have on file. Am I speaking with Margaret?
+[00:25] PATIENT: ...hm.
+[00:38] AGENT: Am I speaking with Margaret?
+[00:39] PATIENT: No. It’s June.
+[00:46] AGENT: please tell me your full name and date of birth.
+[00:46] PATIENT: June Park, March second, nineteen sixty-three.
+[00:52] PATIENT: March second, nineteen sixty-three.
+[00:52] AGENT: What is your date of birth?
+[01:09] AGENT: Just to confirm, I have your name as June Park and your date of birth as March 2nd, 1963. Is that correct? If so, could you please spell your first and last name for me?
+[01:11] PATIENT: Yes. J-U-N-E P-A-R-K.
+[01:16] AGENT: Could you please spell your first and last name for me?
+[01:18] PATIENT: June. J-U-N-E. Park. P-A-R-K.
+[01:23] AGENT: Could you please spell your last name as well?
+[01:24] PATIENT: P-A-R-K.
+[01:33] AGENT: Would you like to use your phone number to look up your record?
+[01:37] AGENT: If so, please tell me the phone number you have on file with us.
+[01:39] AGENT: If you're not sure, just let me know.
+[01:39] PATIENT: Um... let me think. Yes.
+[01:45] AGENT: Take your time.
+[01:49] AGENT: Let me know if you want to use your phone number or if you'd like to confirm your name and date of birth again.
+[01:50] PATIENT: Name and date of birth are fine.
+[02:03] AGENT: Please confirm your first and last name by spelling them out and your date of birth one more time.
+[02:04] PATIENT: June, J-U-N-E, Park, P-A-R-K, March second, nineteen sixty-three.
+[02:11] AGENT: Could you please spell your last name and tell me your date of birth again?
+[02:12] PATIENT: P-A-R-K, March second, nineteen sixty-three.
+[02:18] AGENT: and your date of birth, please.
+[02:18] PATIENT: March second, nineteen sixty-three.
+[02:30] AGENT: I have your name as June Park, your date of birth is March 2, 1963.
+[02:37] AGENT: and your phone number is 234-231-6327.
+[02:38] PATIENT: Yes, that's correct.
+[02:38] AGENT: Is all of that correct?
+[02:54] AGENT: I can't proceed further right now, but I can make sure our clinic support team follows up with you.
+[02:57] PATIENT: Yes. That works.
+[02:57] AGENT: Would you like me to connect you to our patient support team?

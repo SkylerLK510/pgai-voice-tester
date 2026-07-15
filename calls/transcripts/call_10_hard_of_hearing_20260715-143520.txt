@@ -1,0 +1,22 @@
+[00:04] AGENT: This call may be recorded for quality and training purposes.
+[00:06] PATIENT: I'm sorry, I can only
+[00:06] AGENT: Para Español, oprima el 2.
+[00:09] AGENT: Thanks for calling Pivot Point Orthopedics.
+[00:12] AGENT: Part of pretty good AI. How may I help you today?
+[00:14] PATIENT: Hi there, I'd like to make a follow-up appointment. I'm sorry, my hearing isn't great, so I might need you to repeat things. I don't remember the doctor’s name exactly, but I need to come in. Could you help me find a time?
+[00:22] AGENT: I see you're calling from the number we have on file.
+[00:24] AGENT: Am I speaking with Margaret?
+[00:24] PATIENT: Oh, no, I'm sorry, my name is Eleanor Fitch. Could you update that on your end?
+[00:35] AGENT: No problem.
+[00:38] AGENT: Please provide your full date of birth as well so I can look up your information.
+[00:38] PATIENT: Sure, it's October 26, 1941.
+[00:59] AGENT: Just to confirm, I have your name as Eleanor Fitch, and your date of birth is October 26th, 1941. Is that correct? If so, could you please spell your first and last name for me?
+[01:01] PATIENT: Yes, that’s correct. My first name is spelled E-L-E-A-N-O-R, and my last name is F-I-T-C-H. Did you get that all right?
+[01:22] AGENT: Would you like me to look up your record using the phone number you have on file with us? If so, please provide that number.
+[01:28] AGENT: If you're not sure I can confirm your name and date of birth again, just let me know which you prefer.
+[01:28] PATIENT: Let’s use my name and date of birth to find my record. It's Eleanor Fitch, October 26, 1941.
+[01:48] AGENT: I can't proceed further right now, but I can make sure our clinic support team follows up with you.
+[01:55] AGENT: Please hold while I connect you to our patient support team.
+[01:56] AGENT: Connecting you to a representative. Please wait.
+[01:58] AGENT: Hello, you've reached the pretty good AI test line.
+[01:59] AGENT: Goodbye.

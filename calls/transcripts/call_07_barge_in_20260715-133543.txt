@@ -1,0 +1,12 @@
+[00:05] AGENT: This call may be recorded for quality and training purposes.
+[00:06] AGENT: Para Español, oprima el 2.
+[00:06] PATIENT: I'm sorry, I can only continue
+[00:13] PATIENT: Hi, yeah, I need to know what your office hours are.
+[00:13] AGENT: Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[00:29] AGENT: Our clinic is open Monday, Tuesday, and Thursday from 9 a.m. to 4 p.m., Wednesday from 12 p.m. to 7 p.m., and Friday from 9 a.m. to 12 p.m.
+[00:31] AGENT: Is there anything else I can help you with?
+[00:32] PATIENT: Wait, hold on, before you finish—what insurance do you take? I need to know that right now.
+[00:49] AGENT: We accept most insurance plans at Pivot Point Orthopedics. If you have a specific insurance provider in mind, I can check for you. Would you like to share which insurance you have?
+[00:50] PATIENT: Look, I’m in a rush, sorry for jumping in earlier. Just quickly—tell me again your exact office hours, and I’ll confirm my insurance after that.
+[01:13] AGENT: No problem. Our hours are Monday, Tuesday, and Thursday from 9 a.m. to 4 p.m., Wednesday from 12 p.m. to 7 p.m., and Friday from 9 a.m. to 12 p.m. Ready to check your insurance now?
+[01:14] PATIENT: Got it, thanks. You take most insurance plans, right? That covers it. Appreciate it—bye now.

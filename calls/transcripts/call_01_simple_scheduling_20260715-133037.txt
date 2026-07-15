@@ -1,0 +1,24 @@
+[00:04] AGENT: This call may be recorded for quality and training purposes.
+[00:05] AGENT: Para Español, oprima el 2.
+[00:11] AGENT: Thanks for calling ThetaPoint Orthopedics, part of Pretty Good AI. How may I help you today?
+[00:11] PATIENT: Oh, hi there! I'd like to make an appointment, please.
+[00:23] PATIENT: Yes, that’s me, Margaret.
+[00:24] AGENT: I see you're calling from the number we have on file. Am I speaking with Margaret?
+[00:27] AGENT: Please provide your date of birth.
+[00:28] PATIENT: Sure, it's March 14, 1958.
+[00:32] AGENT: Could you please tell me your date of birth?
+[00:33] PATIENT: Oh, sure, my date of birth is March 14th, 1958.
+[00:38] AGENT: Go ahead with your date of birth when you're ready.
+[00:39] PATIENT: Oh, I’m sorry if it wasn’t clear. My birthdate is March 14th, 1958.
+[00:50] AGENT: No problem. Please tell me your date of birth.
+[00:50] PATIENT: Oh, I said it's March 14th, 1958.
+[01:08] AGENT: Thank you. What is the reason for your visit? Are you coming in for something urgent, a routine check-up, a follow-up, or something else?
+[01:09] PATIENT: It’s a new-patient appointment, just to get established and have a general checkup.
+[01:22] AGENT: You'd like to schedule a new patient appointment to establish care and have a general check-up, correct?
+[01:24] PATIENT: Yes, that’s right. I’m hoping to get something next week in the afternoon if possible.
+[01:55] PATIENT: Could you please check for afternoon times on other days? That would be great.
+[01:55] AGENT: We have openings next week with ABRICOR, your primary provider. On Monday, July 20th, there are appointments at 9 a.m., 9.45 a.m., and 10.30 a.m. Would you like one of these, or should I check for later afternoon times on other days?
+[02:13] AGENT: On Tuesday, July 21st, there are afternoon openings with Duty Hauser at 2.15 p.m., 3.00 p.m., and 3.45 p.m. Would you like one of these times?
+[02:14] PATIENT: Hmm, let's go with the 3:45 p.m. on Tuesday, July 21st. That works for me.
+[02:58] AGENT: Margaret, your appointment is set for Tuesday, July 21st at 3.45 p.m. with Dr. Dudi Hauser at Pivot Point Orthopedics. Please bring your photo ID, insurance card, a list of your current medications, and any imaging discs you have. Would you like me to text you these details?
+[02:59] PATIENT: Thanks, that’s all clear. Tuesday, July 21st at 3:45 p.m. with Dr. Doogie Howser. I’ll have all my info ready. I don’t need a text, I’ve got it. Thank you so much. Goodbye!

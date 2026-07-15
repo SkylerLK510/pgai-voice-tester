@@ -1,0 +1,25 @@
+[00:04] AGENT: This call may be recorded for quality and training purposes.
+[00:06] PATIENT: I'm sorry,
+[00:07] AGENT: Para Español, oprima el 2.
+[00:11] AGENT: Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI.
+[00:13] AGENT: How may I help you today?
+[00:15] PATIENT: Hi there! I’d like to book a check-up sometime next month. You know, my late wife used to have the most thorough doctor visits... they really took good care of her. Anyway, let’s get this sorted.
+[00:24] AGENT: I see you're calling from the number we have on file.
+[00:26] AGENT: Am I speaking with Margaret?
+[00:28] PATIENT: Oh, no, this is Harold Petersen. But Margaret was my wife. I’m calling for my own check-up. The weather’s been something lately—my garden’s been loving it. Now, about that appointment…
+[00:38] AGENT: Thanks, Harold. Please provide your full date of birth.
+[00:40] PATIENT: Sure thing, it's November 15, 1947. You know, she always handled all the paperwork—I’m still getting the hang of it. Anyway, what’s next?
+[00:58] AGENT: Would you like me to look up your record using your phone number? If so, please provide the number you have on file with us.
+[00:58] AGENT: If you're not sure, just let me know.
+[01:00] PATIENT: Actually, I think you’ve got my number on file—it’s the one I’m calling from. Let’s go ahead and find that appointment time.
+[01:16] PATIENT: Yes, that’s the one. You got it right.
+[01:17] AGENT: Just to confirm, your phone number is 234-231-6327, is that correct?
+[01:44] AGENT: I can't proceed further right now, but I can make sure our clinic support team follows up with you.
+[01:48] AGENT: Would you like me to connect you to our patient support team?
+[01:48] PATIENT: Oh, did we ever pick a day for that check-up? I’d really like to get that set now.
+[02:05] AGENT: I'm unable to access your record at the moment, so I can't book your checkup right now. I'll let our clinic support team know to follow up with you as soon as possible.
+[02:08] AGENT: Please stay on the line while I document your request.
+[02:09] PATIENT: Alright, I understand. I’ll wait. Just want to make sure we get that check-up set up soon.
+[02:12] AGENT: Connecting you to a representative.
+[02:13] PATIENT: Well, I was hoping we could just pick a time now, but I
+[02:14] AGENT: Please wait

@@ -1,0 +1,22 @@
+[00:05] AGENT: This call may be recorded for quality and training purposes.
+[00:06] AGENT: Para Español, oprima el 2.
+[00:12] AGENT: Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[00:13] PATIENT: Hi, I'd like to make a new patient appointment, please.
+[00:26] AGENT: I see you're calling from a number we have on file. Am I speaking with Margaret?
+[00:27] PATIENT: Oh, no, I'm not Margaret. My name is Siobhan Nguyen-Kaczmarek.
+[00:37] AGENT: please provide your date of birth as well.
+[00:38] PATIENT: Sure, it’s December 5th, 1988.
+[00:58] AGENT: Just to confirm, I have your name as Siobhan Nguyen-Kak-Marek, and your date of birth as December 5, 1988. Is that correct? If so, could you please spell your first and last name for me?
+[01:00] PATIENT: Sure, I'll spell it out for you. The first name is S-I-O-B-H-A-N. The last name is N-G-U-Y-E-N hyphen K-A-C-Z-M-A-R-E-K.
+[01:27] AGENT: Would you like to use your phone number to look up your record? If so, please provide the number you have on file with us. If you're not sure...
+[01:31] AGENT: I can confirm your name and date of birth again. Let me know how you'd like to proceed.
+[01:32] PATIENT: I’d prefer to confirm by name and date of birth. Could you read my full name back to me first, so I can be sure it’s right?
+[01:55] AGENT: I have your name as Siobhan Nguyen Kazmarek and your date of birth as December 5th, 1988. Is that correct? If so, please spell your first and last name for me one more time.
+[01:57] PATIENT: The birth date is correct. But let me correct the name. The first name is S-I-O-B-H-A-N, and the last name is N-G-U-Y-E-N hyphen K-A-C-Z-M-A-R-E-K.
+[02:29] AGENT: I have your phone number as 234-231-6327 and your date of birth as December 5th, 1988. Is that correct? If so, please confirm your first and last name one more time by spelling them out.
+[02:30] PATIENT: Yes, the date of birth is correct. Here’s the name again. First name: S-I-O-B-H-A-N. Last name: N-G-U-Y-E-N hyphen K-A-C-Z-M-A-R-E-K.
+[02:54] AGENT: I can't book a new patient appointment right now, but I can connect you to our patient support team for help.
+[02:58] AGENT: Please stay on the line while I transfer your call.
+[03:00] PATIENT: Actually, before transferring, could we finish
+[03:00] AGENT: connecting you to a representative. Please wait.
+[03:05] PATIENT: Goodbye. I'll end the call now.

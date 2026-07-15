@@ -1,0 +1,29 @@
+[00:02] AGENT: This call may be recorded for quality and training purposes.
+[00:06] PATIENT: Hola, buenas tardes. Dígame,
+[00:06] AGENT: Para Español, oprima el 2.
+[00:10] AGENT: Thank you for calling Pivot Point Orthopedics.
+[00:16] PATIENT: Claro, mi nombre es Margaret Chen.
+[00:17] AGENT: Would you like to create a demo patient profile? I just need your first and last name to get started.
+[00:25] AGENT: Would you like to connect to a Spanish-speaking agent?
+[00:26] PATIENT: No es necesario, podemos seguir así. ¿Qué más necesita para agendar la cita?
+[00:47] AGENT: I can help you in English. Would you like to create a demo patient profile? I just need your first and last name.
+[00:47] PATIENT: De acuerdo, como le mencioné, mi nombre
+[00:49] AGENT: Are you still there?
+[00:50] PATIENT: Sí, estoy aquí. Mi nombre es Margaret Chen. ¿Qué más le gustaría saber para continuar con la cita?
+[01:14] PATIENT: Sure, I understand. My first name is Margaret and my last name is Chen.
+[01:14] AGENT: I can only assist in English. Would you like to create a demo patient profile? I just need your first and last name.
+[01:37] AGENT: Your patient profile has been created, and your date of birth is July 4, 2000, for demo purposes. How may I help you today?
+[01:38] PATIENT: Actually, my real date of birth is March 14, 1958. I'd like to book an appointment for next week in the afternoon. What options do you have available?
+[01:54] AGENT: Thanks for sharing your date of birth, March 14, 1958.
+[02:03] AGENT: Can you tell me the reason for your visit? For example, is this for a routine checkup, a follow-up, a new patient consultation, or something else?
+[02:04] PATIENT: Es una consulta de paciente nuevo. Quiero empezar con un especialista y ver los siguientes pasos.
+[02:15] AGENT: Here are some.
+[02:16] PATIENT: Perdón, ¿podría repetir cuáles son los horarios disponibles en la tarde para la próxima semana?
+[02:23] AGENT: Here are some options, an acute visit for urgent concerns,
+[02:36] AGENT: general office visit for routine care, a new patient consultation, a follow-up consultation, a short or long procedure, or a physical therapy session. Which one fits your needs best?
+[02:37] PATIENT: Creo que lo que encaja mejor es una consulta de paciente nuevo. Esa es la opción que necesito.
+[03:11] PATIENT: La que coincide es la consulta de paciente nuevo. Vamos con esa, por favor.
+[03:12] AGENT: You can choose from these options, an acute visit for urgent concerns, a general office visit for routine care, a new patient consultation, a follow-up consultation, a short or long procedure, or a physical therapy session. Which one matches your reason for visiting?
+[03:38] AGENT: You can book an acute visit for urgent issues, a general office visit for routine care, a new patient consultation, a follow-up consultation, a short or long procedure.
+[03:43] AGENT: or a physical therapy session. Which one describes your reason for coming in?
+[03:44] PATIENT: Lo que necesito es la consulta de paciente nuevo. Vamos a seguir con esa. Ahora, ¿qué horarios de la próxima semana tiene disponibles en la tarde?
