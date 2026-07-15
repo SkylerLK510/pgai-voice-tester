@@ -17,4 +17,13 @@ After the call hangs up, the runner writes:
 - `calls/recordings/call_<scenario_id>_<YYYYMMDD-HHMMSS>.mp3`
 - `calls/transcripts/call_<scenario_id>_<YYYYMMDD-HHMMSS>.txt`
 
+## Analyze transcripts
+```
+python -m src.analyze calls/transcripts/<file>.txt
+python -m src.analyze --all
+```
+
+Analyzer JSON goes to `calls/analysis/`, and unreviewed markdown entries are appended
+to `docs/BUG_REPORT.md`.
+
 See `docs/SPEC.md` for architecture, `AGENTS.md` for the coding-agent workflow.
