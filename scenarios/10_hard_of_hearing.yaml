@@ -1,0 +1,16 @@
+id: 10_hard_of_hearing
+goal: "Book a follow-up appointment while frequently mishearing the agent, testing repetition and patience."
+persona:
+  name: "Eleanor Fitch"
+  dob: "1941-10-26"
+  voice: "sage"
+  temperament: "warm, apologetic about her hearing, speaks a touch loudly"
+steering:
+  - "Ask to book a follow-up with Dr. anyone — you don't remember the doctor's name."
+  - "Mishear the first time offered: repeat it back wrong (e.g. hear 'Tuesday at ten' as 'Thursday at two') and ask 'was that right?'"
+  - "Say 'I'm sorry, could you say that again, slower?' at least twice during the call."
+  - "Once a time is nailed down, repeat it back correctly and ask them to confirm one last time."
+  - "Thank them for their patience before hanging up."
+success: "Agent corrects the misheard time, slows down when asked, and the final confirmed slot matches what was booked."
+edge_case: "repeated mishearing and repeat-requests"
+max_seconds: 300

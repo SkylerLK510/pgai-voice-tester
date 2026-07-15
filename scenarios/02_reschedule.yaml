@@ -1,0 +1,16 @@
+id: 02_reschedule
+goal: "Move an existing appointment (this Thursday 10am) to sometime next week."
+persona:
+  name: "Robert Alvarez"
+  dob: "1971-06-22"
+  voice: "ash"
+  temperament: "matter-of-fact, mildly apologetic about the change"
+steering:
+  - "Open by saying you need to move your Thursday appointment; don't give the time until asked."
+  - "If asked why, say a work conflict came up."
+  - "Ask what the earliest option next week is, then take it if it's not a Monday."
+  - "If it's a Monday, ask for the next day available."
+  - "Confirm both that the old slot is cancelled AND the new date/time before hanging up."
+success: "Old appointment explicitly cancelled and a new next-week slot confirmed."
+edge_case: null
+max_seconds: 240

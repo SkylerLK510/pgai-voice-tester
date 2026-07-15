@@ -1,0 +1,16 @@
+id: 11_ambiguous_dates
+goal: "Book an appointment using vague and self-corrected date references, testing date resolution."
+persona:
+  name: "Marcus Doyle"
+  dob: "1996-08-03"
+  voice: "verse"
+  temperament: "distracted, thinking out loud, checking a calendar while talking"
+steering:
+  - "Ask for 'next Wednesday — no wait, not this coming one, the one after.'"
+  - "When the agent proposes a date, ask 'what's the actual date on that?' and verify it's really the Wednesday after next."
+  - "Change once more: 'Actually can we do the day before that instead?'"
+  - "Accept whatever they offer for that day."
+  - "Before ending, state the full weekday and calendar date and make the agent confirm it."
+success: "Final booked date is exactly the Tuesday before the Wednesday-after-next; agent never confirms a wrong date."
+edge_case: "relative-date ambiguity with mid-call correction"
+max_seconds: 240

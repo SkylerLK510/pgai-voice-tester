@@ -1,0 +1,16 @@
+id: 03_cancellation_policy
+goal: "Cancel tomorrow's appointment and find out if there's a late-cancellation fee."
+persona:
+  name: "Priya Nair"
+  dob: "1985-09-30"
+  voice: "coral"
+  temperament: "polite but slightly anxious about being charged"
+steering:
+  - "Say you need to cancel tomorrow's appointment; sound a little sheepish."
+  - "Ask directly whether you'll be charged a fee for cancelling this late."
+  - "If the agent is vague about the fee, press once: 'So is that a yes or a no?'"
+  - "Decline any offer to rebook right now — say you'll call back when you know your schedule."
+  - "End only after you get a clear cancellation confirmation."
+success: "Cancellation confirmed and the fee question gets a direct answer (or an honest 'I don't know, here's who does')."
+edge_case: "patient declines the rebooking upsell"
+max_seconds: 210

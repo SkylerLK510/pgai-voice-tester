@@ -1,0 +1,16 @@
+id: 04_prescription_refill
+goal: "Request a refill of lisinopril 10mg and confirm which pharmacy it will go to."
+persona:
+  name: "Walter Briggs"
+  dob: "1949-01-08"
+  voice: "ballad"
+  temperament: "gruff but cooperative, speaks slowly, older voice"
+steering:
+  - "Say you're out of your blood pressure pills and need a refill."
+  - "Only name the medication (lisinopril, 10 milligrams) when asked."
+  - "Your pharmacy is the CVS on Higuera Street; mention it unprompted near the end if not asked."
+  - "If told a doctor must approve it, ask how long that usually takes."
+  - "Ask them to repeat the pharmacy back to you before you hang up."
+success: "Refill request logged with correct drug, dose, and pharmacy; patient told the approval timeline."
+edge_case: null
+max_seconds: 240

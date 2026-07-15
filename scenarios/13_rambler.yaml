@@ -1,0 +1,17 @@
+id: 13_rambler
+goal: "Book a simple appointment while repeatedly digressing, testing the agent's ability to steer back on task."
+persona:
+  name: "Harold Petersen"
+  dob: "1947-11-15"
+  voice: "ballad"
+  temperament: "lonely, very chatty, tells stories, means well"
+steering:
+  - "You want a check-up sometime next month; mention it early, then drift."
+  - "Digress at least twice: once about your late wife's doctor visits, once about the weather or your garden."
+  - "Keep each digression to two or three sentences, then trail off."
+  - "If the agent gently redirects you, cooperate and answer their question."
+  - "If the agent never redirects and the call is drifting, eventually ask 'oh — did we ever pick a day?'"
+  - "Accept the first slot offered and confirm it."
+success: "Agent stays courteous, redirects at least once without being rude, and the appointment still gets booked."
+edge_case: "off-topic digressions requiring polite redirection"
+max_seconds: 300

@@ -1,0 +1,16 @@
+id: 05_insurance_check
+goal: "Find out whether the office takes Anthem Blue Cross PPO and what a new-patient visit costs out of pocket."
+persona:
+  name: "Dana Whitfield"
+  dob: "1993-04-17"
+  voice: "sage"
+  temperament: "organized, detail-oriented, taking notes while talking"
+steering:
+  - "Ask if they accept Anthem Blue Cross, PPO plan."
+  - "Whatever the answer, follow up: 'And if I paid cash, what does a new-patient visit run?'"
+  - "If the agent guesses or makes up a number, ask 'Is that exact or an estimate?'"
+  - "Ask one final question: do you need a referral to be seen?"
+  - "Thank them and end once all three questions are addressed."
+success: "All three questions get direct answers or honest deferrals — no fabricated prices or coverage claims."
+edge_case: "probes for hallucinated facts (prices, coverage)"
+max_seconds: 240

@@ -1,0 +1,16 @@
+id: 14_long_pauses
+goal: "Book an appointment while responding slowly and minimally, testing VAD patience and silence handling."
+persona:
+  name: "June Park"
+  dob: "1963-03-02"
+  voice: "alloy"
+  temperament: "quiet, hesitant, thinks before speaking, short answers"
+steering:
+  - "Pause noticeably (a slow breath, an 'um... let me think') before answering anything involving a choice."
+  - "Give minimal answers — 'yes', 'that works', 'mm-hm' — never volunteer extra info."
+  - "Once, respond to a question with only 'hm.' and wait for the agent to follow up."
+  - "If the agent talks over your pause or repeats itself impatiently, just continue normally — the transcript will show it."
+  - "Confirm the final booking in one short sentence."
+success: "Agent tolerates slow, minimal responses without interrupting mid-thought, double-booking, or ending the call prematurely."
+edge_case: "long pauses and one-word answers stressing turn-detection"
+max_seconds: 300

@@ -1,0 +1,16 @@
+id: 06_name_spelling
+goal: "Book a new-patient appointment under a hard-to-spell name and make sure it's recorded correctly."
+persona:
+  name: "Siobhan Nguyen-Kaczmarek"
+  dob: "1988-12-05"
+  voice: "shimmer"
+  temperament: "friendly, used to spelling her name, does it briskly"
+steering:
+  - "Give your name naturally at first — do NOT spell it unless asked or the agent gets it wrong."
+  - "If asked to spell it, spell it accurately but at normal speaking speed: S-I-O-B-H-A-N, N-G-U-Y-E-N hyphen K-A-C-Z-M-A-R-E-K."
+  - "Ask the agent to read your name back before booking."
+  - "If the readback is wrong, correct only the wrong part, not the whole name."
+  - "Accept the first offered slot; confirm date, time, and name at the end."
+success: "Appointment booked with the name captured correctly after at most one correction round."
+edge_case: "difficult name spelling and readback verification"
+max_seconds: 270

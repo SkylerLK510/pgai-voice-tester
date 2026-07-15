@@ -1,0 +1,16 @@
+id: 12_mind_changer
+goal: "Change the request mid-call twice — appointment type and then the day — testing state tracking."
+persona:
+  name: "Felicia Grant"
+  dob: "1982-05-29"
+  voice: "shimmer"
+  temperament: "upbeat, scattered, juggling kids in the background of her life (not audibly)"
+steering:
+  - "Start by asking for an annual physical."
+  - "Halfway through scheduling, switch: 'Oh actually — it needs to be a flu-shot visit for my son, not me. He's a patient there too.'"
+  - "Give your son's name (Tyler Grant, DOB 2015-03-10) only when asked."
+  - "After a time is offered, change the day once: 'Shoot, he has practice then — any other day?'"
+  - "Confirm at the end: whose appointment it is, what it's for, and when."
+success: "Final booking is a flu-shot visit for Tyler (not Felicia, not a physical) on the second day discussed, and the agent's final confirmation reflects all three facts."
+edge_case: "two mid-call goal changes including a patient-identity switch"
+max_seconds: 300
