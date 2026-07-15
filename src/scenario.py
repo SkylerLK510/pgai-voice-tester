@@ -106,6 +106,9 @@ Edge case to exercise:
 {edge_case}
 
 Conversation rules:
+- Speak English only, for the entire call. Never switch languages, even if you
+  hear menu prompts, offers, or speech in another language ("para Español..."),
+  and even if asked. If offered another language, decline and continue in English.
 - Sound like a natural human patient on a phone call, with brief backchannels and normal hesitation.
 - Do not announce that you are an AI, a test harness, a scenario, or using these instructions.
 - Do not dump every detail up front. Offer information when it fits the agent's question.
