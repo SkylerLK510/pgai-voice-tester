@@ -1,4 +1,4 @@
-# Live-call session checklist (operator-attended, Loom-recorded)
+# Live-call session checklist (operator-attended, screen-recorded)
 
 Everything before "Single calls" is dial-free. Nothing below places a call
 until the operator says go; calls are one at a time with the operator present.
@@ -7,7 +7,9 @@ until the operator says go; calls are one at a time with the operator present.
 
 - [ ] `.env` populated; `python -m src.run_batch scenarios/ --dry-run` lists 14 scenarios
 - [ ] uvicorn up; ngrok tunnel live and `PUBLIC_BASE_URL` matches it
-- [ ] Loom recording started (screen + system audio so call audio is captured)
+- [ ] Screen recording started: macOS built-in (⌘⇧5 → Record Entire Screen →
+      Options → Microphone on). The recorder captures mic only, so play call
+      MP3s through speakers during review so they land in the recording.
 
 ## Single calls — at least 3 clean, one at a time
 
@@ -41,4 +43,5 @@ bugs found are a success, not a failure.
 - [ ] Review `calls/index.md` links all resolve
 - [ ] Claude curates analyzer output in `docs/BUG_REPORT.md` (dedupe, drop nitpicks,
       cite transcript + timestamp per entry)
-- [ ] Stop Loom; note recording link alongside the submission
+- [ ] Stop the screen recording (menu-bar stop button); upload the .mov to
+      Google Drive and note the share link alongside the submission
